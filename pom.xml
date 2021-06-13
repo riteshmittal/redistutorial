@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ |  Copyright 2017 Adobe Systems Incorporated
+ |
+ |  Licensed under the Apache License, Version 2.0 (the "License");
+ |  you may not use this file except in compliance with the License.
+ |  You may obtain a copy of the License at
+ |
+ |      http://www.apache.org/licenses/LICENSE-2.0
+ |
+ |  Unless required by applicable law or agreed to in writing, software
+ |  distributed under the License is distributed on an "AS IS" BASIS,
+ |  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ |  See the License for the specific language governing permissions and
+ |  limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>AEMMaven13</groupId>
+        <artifactId>AEMMaven13</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <artifactId>AEMMaven13.core</artifactId>
+    <packaging>bundle</packaging>
+    <name>AEMMaven13 - Core</name>
+    <description>Core bundle for AEMMaven13</description>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <!-- Import any version of javax.inject, to allow running on multiple versions of AEM -->
+                        <Import-Package>javax.inject;version=0.0.0,*</Import-Package>
+                        <Sling-Model-Packages>
+                            com.aem.community.core
+                        </Sling-Model-Packages>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- OSGi Dependencies -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.cmpn</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.annotation</artifactId>
+        </dependency>
+        <!-- Other Dependencies -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+    <groupId>com.adobe.aem</groupId>
+    <artifactId>uber-jar</artifactId>
+    <version>6.3.3</version>
+    <classifier>apis</classifier>
+    <scope>provided</scope>
+</dependency>
+        
+    <!-- https://mvnrepository.com/artifact/com.adobe.livecycle.dsc/com.adobe.livecycle.dsc.clientsdk -->
+<dependency>
+    <groupId>com.adobe.livecycle.dsc</groupId>
+    <artifactId>com.adobe.livecycle.dsc.clientsdk</artifactId>
+    <version>6.2</version>
+</dependency>
+    
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.models.api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit-addons</groupId>
+            <artifactId>junit-addons</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.felix/org.apache.felix.scr -->
+<dependency>
+    <groupId>org.apache.felix</groupId>
+    <artifactId>org.apache.felix.scr</artifactId>
+    <version>2.1.16</version>
+</dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.felix/org.apache.felix.scr.annotations -->
+<dependency>
+    <groupId>org.apache.felix</groupId>
+    <artifactId>org.apache.felix.scr.annotations</artifactId>
+    <version>1.12.0</version>
+</dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.1.1</version>
+</dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.13</version>
+</dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.11</version>
+</dependency>
+      
+<dependency>
+	<artifactId>commons-collections4</artifactId>
+	<version>4.1</version>
+	<groupId>org.apache.commons</groupId>
+	<scope>provided</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.6</version>
+</dependency>
+
+<dependency>
+	<artifactId>jackson-annotations</artifactId>
+	<version>2.9.5</version>
+	<groupId>com.fasterxml.jackson.core</groupId>
+	<scope>provided</scope>
+</dependency>
+      
+      <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+<dependency>
+    <groupId>commons-lang</groupId>
+    <artifactId>commons-lang</artifactId>
+    <version>2.6</version>
+</dependency>
+        
+      <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.6</version>
+</dependency>
+      <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.6</version>
+</dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.adobe.cq/com.adobe.cq.export.json -->
+<dependency>
+    <groupId>com.adobe.cq</groupId>
+    <artifactId>com.adobe.cq.export.json</artifactId>
+    <version>0.0.12</version>
+</dependency>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.11.3</version>
+</dependency>
+        
+<dependency>
+	<artifactId>jackson-databind</artifactId>
+	<version>2.9.5</version>
+	<groupId>com.fasterxml.jackson.core</groupId>
+	<scope>provided</scope>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+<dependency>
+    <groupId>redis.clients</groupId>
+    <artifactId>jedis</artifactId>
+    <version>3.3.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-pool2</artifactId>
+    <version>2.6.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-email</artifactId>
+    <version>1.5</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.servicemix.bundles/org.apache.servicemix.bundles.solr-solrj -->
+<dependency>
+    <groupId>org.apache.servicemix.bundles</groupId>
+    <artifactId>org.apache.servicemix.bundles.solr-solrj</artifactId>
+    <version>8.7.0_1</version>
+</dependency>
+
+<dependency>
+  <groupId>software.amazon.awssdk</groupId>
+  <artifactId>aws-sdk-java</artifactId>
+  <version>2.15.73</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-sts</artifactId>
+    <version>1.9.6</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-sts</artifactId>
+    <version>1.11.946</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20201115</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-s3</artifactId>
+    <version>1.11.946</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.adobe.aemfd/adobe-aemfd-cpdf-bmc -->
+
+
+<!-- https://mvnrepository.com/artifact/com.adobe.aemfd/adobe-aemfd-cpdf-service -->
+
+
+<!-- https://mvnrepository.com/artifact/com.adobe.aemfd/aemfd-client-sdk -->
+<dependency>
+    <groupId>com.adobe.aemfd</groupId>
+    <artifactId>aemfd-client-sdk</artifactId>
+    <version>6.3.0</version>
+</dependency>
+
+    </dependencies>
+</project>
